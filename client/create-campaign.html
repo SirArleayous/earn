@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Campaign | SINEX Client Portal</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <div class="brand">SINEX<span>.</span> <small style="font-size:0.65rem; color:#64748b;">CLIENT PORTAL</small></div>
+    <ul class="sidebar-menu">
+      <li><a href="dashboard.html">📊 Overview</a></li>
+      <li><a href="campaigns.html">🚀 Campaigns</a></li>
+      <li><a href="create-campaign.html" class="active">➕ Create Campaign</a></li>
+      <li><a href="analytics.html">📈 Data & Analytics</a></li>
+      <li><a href="wallet.html">💳 Deposit Wallet</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <strong>Enterprise Campaign Studio</strong>
+      <span>Business Account: Flutterwave Tech</span>
+    </header>
+
+    <div class="main-content" style="max-width: 800px;">
+      <div class="card">
+        <h2 style="margin-bottom: 1.5rem;">Launch New Task / Research Campaign</h2>
+
+        <form id="campaignBuilder" onsubmit="submitCampaign(event)">
+          <div style="margin-bottom: 1rem;">
+            <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">Campaign Title</label>
+            <input type="text" id="title" placeholder="e.g. West African Mobile UX Audit" required style="width:100%; padding:0.6rem; border:1px solid var(--border); border-radius:4px;">
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+            <div>
+              <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">Task Category</label>
+              <select style="width:100%; padding:0.6rem; border:1px solid var(--border); border-radius:4px;">
+                <option>Surveys & Research</option>
+                <option>AI / Data Annotation</option>
+                <option>Website & Mobile Testing</option>
+                <option>Field Verification</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">Target African Market</label>
+              <select style="width:100%; padding:0.6rem; border:1px solid var(--border); border-radius:4px;">
+                <option>Nigeria (NGN)</option>
+                <option>Kenya (KES)</option>
+                <option>Ghana (GHS)</option>
+                <option>Uganda (UGX)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
+            <div>
+              <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">Reward per User (₦)</label>
+              <input type="number" id="reward" value="1000" oninput="calcBudget()" style="width:100%; padding:0.6rem; border:1px solid var(--border); border-radius:4px;">
+            </div>
+            <div>
+              <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">Target User Count</label>
+              <input type="number" id="participants" value="100" oninput="calcBudget()" style="width:100%; padding:0.6rem; border:1px solid var(--border); border-radius:4px;">
+            </div>
+          </div>
+
+          <!-- Auto Financial Budget Summary -->
+          <div style="background:var(--bg-main); padding:1rem; border-radius:6px; margin-bottom:1.5rem;">
+            <div style="display:flex; justify-content:space-between; font-size:0.875rem; margin-bottom:0.4rem;">
+              <span>Total User Payout:</span>
+              <strong id="subtotal">₦100,000.00</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:0.875rem; margin-bottom:0.4rem;">
+              <span>SINEX Verification & Platform Fee (15%):</span>
+              <strong id="fee">₦15,000.00</strong>
+            </div>
+            <hr style="margin:0.5rem 0; border:0; border-top:1px solid var(--border);">
+            <div style="display:flex; justify-content:space-between; font-size:1rem; font-weight:700;">
+              <span>Total Estimated Budget:</span>
+              <span id="grandTotal" style="color:var(--primary);">₦115,000.00</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Campaign for Admin Approval</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+  function calcBudget() {
+    const reward = parseFloat(document.getElementById('reward').value) || 0;
+    const count = parseFloat(document.getElementById('participants').value) || 0;
+    const subtotal = reward * count;
+    const fee = subtotal * 0.15;
+    const total = subtotal + fee;
+
+    document.getElementById('subtotal').innerText = '₦' + subtotal.toLocaleString();
+    document.getElementById('fee').innerText = '₦' + fee.toLocaleString();
+    document.getElementById('grandTotal').innerText = '₦' + total.toLocaleString();
+  }
+
+  function submitCampaign(e) {
+    e.preventDefault();
+    SINEX.showToast('Campaign submitted! Sent to Admin Queue for verification.');
+    setTimeout(() => window.location.href = 'campaigns.html', 1500);
+  }
+</script>
+</body>
+</html>

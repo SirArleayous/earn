@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin System Control | SINEX Console</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <div class="brand">SINEX<span>.</span> <small style="font-size:0.65rem; color:#ef4444;">SUPER ADMIN</small></div>
+    <ul class="sidebar-menu">
+      <li><a href="dashboard.html" class="active">🛡️ Admin Overview</a></li>
+      <li><a href="users.html">👥 User Management</a></li>
+      <li><a href="clients.html">🏢 Clients & Businesses</a></li>
+      <li><a href="campaigns.html">📦 Campaign Approvals</a></li>
+      <li><a href="withdrawals.html">💸 Withdrawal Requests</a></li>
+      <li><a href="fraud.html">🚨 Fraud & Risk Center</a></li>
+      <li><a href="reports.html">📊 Financial Reports</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <strong>Global Command Center</strong>
+      <span class="badge badge-danger">Production Real-Time Control</span>
+    </header>
+
+    <div class="main-content">
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="label">Total Managed Users</div>
+          <div class="value">10,482</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Active Client Accounts</div>
+          <div class="value">523</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Pending Campaign Approvals</div>
+          <div class="value" style="color:var(--warning);">12</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Escrow Liquidity</div>
+          <div class="value" style="color:var(--accent);">₦48,250,000</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 1.5rem;">
+        <h3 style="margin-bottom:1rem;">Pending Campaign Approvals Queue</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Campaign Name</th>
+              <th>Client</th>
+              <th>Target Market</th>
+              <th>Budget</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>East Africa Merchant Field Audit</strong></td>
+              <td>Kasha Health Kenya</td>
+              <td>🇰🇪 KES</td>
+              <td>KSh 450,000</td>
+              <td><span class="badge badge-warning">Review Required</span></td>
+              <td>
+                <button class="btn btn-primary" style="padding:0.2rem 0.5rem; font-size:0.75rem;" onclick="SINEX.showToast('Campaign Approved & Activated')">Approve</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

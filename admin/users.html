@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Management | Admin Console</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <div class="brand">SINEX<span>.</span> <small style="font-size:0.65rem; color:#ef4444;">ADMIN</small></div>
+    <ul class="sidebar-menu">
+      <li><a href="dashboard.html">🛡️ Overview</a></li>
+      <li><a href="users.html" class="active">👥 User Management</a></li>
+      <li><a href="clients.html">🏢 Clients</a></li>
+      <li><a href="campaigns.html">📦 Campaigns</a></li>
+      <li><a href="fraud.html">🚨 Risk Center</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <strong>User Directory & Governance</strong>
+    </header>
+
+    <div class="main-content">
+      <div class="card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>User ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Country</th>
+              <th>KYC Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#SNX-1092</td>
+              <td>Alex Kwame</td>
+              <td>alex.kwame@sinex.africa</td>
+              <td>🇳🇬 Nigeria</td>
+              <td><span class="badge badge-success">Level 2 Verified</span></td>
+              <td>
+                <a href="user-details.html?id=1092" class="btn btn-secondary" style="padding:0.2rem 0.5rem; font-size:0.75rem;">Manage</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

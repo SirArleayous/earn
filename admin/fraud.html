@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fraud & Dispute Resolution Center | SINEX Admin</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+<div class="dashboard-layout">
+  <main class="main-content">
+    <h2 style="color: var(--danger);">🚨 Risk Detection & Anti-Fraud Center</h2>
+    
+    <div class="card" style="margin-top: 1.5rem;">
+      <h3>Flagged Anomaly Audit Queue</h3>
+      <table class="data-table" style="margin-top: 1rem;">
+        <thead>
+          <tr>
+            <th>Flag Risk Type</th>
+            <th>Target User / Client</th>
+            <th>Anomaly Indicator</th>
+            <th>Action Required</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-danger">Multiple Accounts</span></td>
+            <td>User #SNX-9921</td>
+            <td>Duplicate IP & Device Fingerprint detected in 3 task submissions.</td>
+            <td>
+              <button class="btn btn-primary" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;" onclick="SINEXAdmin.toggleUserStatus(9921, 'suspended')">Freeze Account</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>

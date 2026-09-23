@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Details | SINEX User</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+<div class="dashboard-layout">
+  <main class="main-content" style="max-width: 800px; margin: 0 auto;">
+    <a href="tasks.html" class="btn btn-secondary" style="margin-bottom: 1.5rem;">← Back to Marketplace</a>
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <span class="badge badge-info">Survey</span>
+          <h2 style="margin-top: 0.5rem;">Fintech Consumer Survey 2026</h2>
+          <p style="color: var(--text-muted); font-size: 0.875rem;">Client: Moniepoint Research Group</p>
+        </div>
+        <h2 style="color: var(--accent);">₦500.00</h2>
+      </div>
+
+      <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid var(--border);">
+
+      <h3>Task Instructions</h3>
+      <p style="margin: 0.5rem 0 1.5rem; color: var(--text-muted);">
+        Complete this 5-minute survey regarding financial transaction fees, merchant POS experiences, and payment speed across Nigerian commercial banks.
+      </p>
+
+      <h3>Evidence Requirements</h3>
+      <ul style="margin: 0.5rem 0 1.5rem 1.25rem; color: var(--text-muted);">
+        <li>Answer all 12 multiple-choice questions.</li>
+        <li>Provide verifiable location access for demographic confirmation.</li>
+      </ul>
+
+      <button class="btn btn-primary" style="width: 100%; padding: 0.75rem;" onclick="SINEXUser.acceptTask(101)">Accept & Begin Task</button>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/user.js"></script>
+</body>
+</html>

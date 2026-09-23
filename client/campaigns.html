@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Campaigns | SINEX Business</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+<div class="dashboard-layout">
+  <main class="main-content">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+      <h2>Client Campaigns</h2>
+      <a href="create-campaign.html" class="btn btn-primary">+ Launch New Campaign</a>
+    </div>
+
+    <div class="card">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Campaign Title</th>
+            <th>Type</th>
+            <th>Budget</th>
+            <th>Progress</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Moniepoint Merchant Audit 2026</strong></td>
+            <td>Field Verification</td>
+            <td>₦500,000.00</td>
+            <td>142 / 200 Submissions</td>
+            <td><span class="badge badge-success">Active</span></td>
+            <td><button class="btn btn-secondary" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;" onclick="SINEX.showToast('Opening Results Matrix...')">Results</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | SINEX Platform</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--bg-main);">
+
+  <div class="card" style="width: 100%; max-width: 440px; padding: 2.5rem;">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <a href="../public/index.html" class="brand-logo">SINEX<span>.</span></a>
+      <h2 style="font-size: 1.5rem; margin-top: 0.5rem;">Welcome Back</h2>
+      <p style="font-size: 0.875rem; color: var(--text-muted);">Sign in to access your dashboard portal</p>
+    </div>
+
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <div style="margin-bottom: 1.25rem;">
+        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Portal Role Select (Demo Router)</label>
+        <select id="roleSelect" style="width: 100%; padding: 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm);">
+          <option value="USER">User / Task Contributor Portal</option>
+          <option value="CLIENT">Client / Business Portal</option>
+          <option value="ADMIN">Platform Administrator Portal</option>
+          <option value="INVESTOR">Investor Portal</option>
+          <option value="DEVELOPER">Developer & System Portal</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom: 1.25rem;">
+        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Email Address</label>
+        <input type="email" value="alex.kwame@sinex.africa" required style="width: 100%; padding: 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm);">
+      </div>
+
+      <div style="margin-bottom: 1.25rem;">
+        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem;">Password</label>
+        <input type="password" value="••••••••••••" required style="width: 100%; padding: 0.65rem; border: 1px solid var(--border); border-radius: var(--radius-sm);">
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">Sign In to Portal</button>
+    </form>
+
+    <div style="margin-top: 1.5rem; text-align: center; font-size: 0.85rem;">
+      <a href="forgot-password.html">Forgot Password?</a> | <a href="register.html">Create Account</a>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const role = document.getElementById('roleSelect').value;
+      SINEX.setRole(role);
+      
+      const routes = {
+        USER: '../user/dashboard.html',
+        CLIENT: '../client/dashboard.html',
+        ADMIN: '../admin/dashboard.html',
+        INVESTOR: '../investor/dashboard.html',
+        DEVELOPER: '../developer/dashboard.html'
+      };
+      
+      window.location.href = routes[role];
+    }
+  </script>
+</body>
+</html>

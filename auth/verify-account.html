@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Verify Account | SINEX</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+<body class="auth-container">
+  <div class="auth-card" style="text-align: center;">
+    <h2>Verify Email Code</h2>
+    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 2rem;">Enter the 6-digit verification code sent to your mobile/email.</p>
+    
+    <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 2rem;">
+      <input type="text" maxlength="1" value="4" style="width: 48px; height: 56px; text-align: center; font-size: 1.25rem; border: 1px solid var(--border); border-radius: 6px;">
+      <input type="text" maxlength="1" value="8" style="width: 48px; height: 56px; text-align: center; font-size: 1.25rem; border: 1px solid var(--border); border-radius: 6px;">
+      <input type="text" maxlength="1" value="2" style="width: 48px; height: 56px; text-align: center; font-size: 1.25rem; border: 1px solid var(--border); border-radius: 6px;">
+      <input type="text" maxlength="1" value="9" style="width: 48px; height: 56px; text-align: center; font-size: 1.25rem; border: 1px solid var(--border); border-radius: 6px;">
+    </div>
+
+    <button class="btn btn-primary" style="width: 100%;" onclick="SINEX.showToast('Account successfully verified!'); setTimeout(() => window.location.href='../user/dashboard.html', 1000);">Complete Verification</button>
+  </div>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wallet & Earnings | SINEX</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <div class="brand">SINEX<span>.</span></div>
+    <ul class="sidebar-menu">
+      <li><a href="dashboard.html">📊 Dashboard</a></li>
+      <li><a href="wallet.html" class="active">💳 Wallet & Earnings</a></li>
+      <li><a href="withdrawals.html">🏦 Withdrawals</a></li>
+      <li><a href="transactions.html">🧾 Transactions</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <strong>User Wallet Management</strong>
+    </header>
+
+    <div class="main-content">
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="label">Available Balance</div>
+          <div class="value" style="color:var(--accent);">₦24,500.00</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Pending Earnings</div>
+          <div class="value" style="color:var(--warning);">₦3,500.00</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1.5rem;">
+        <h3>Recent Wallet Ledger</h3>
+        <table class="data-table" style="margin-top:1rem;">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sep 23, 2026</td>
+              <td>Survey Reward — Fintech Study</td>
+              <td>Credit</td>
+              <td style="color:var(--accent);">+₦500.00</td>
+              <td><span class="badge badge-success">Completed</span></td>
+            </tr>
+            <tr>
+              <td>Sep 21, 2026</td>
+              <td>Bank Transfer Withdrawal</td>
+              <td>Debit</td>
+              <td style="color:var(--danger);">-₦10,000.00</td>
+              <td><span class="badge badge-success">Processed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

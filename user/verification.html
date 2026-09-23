@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Identity KYC | SINEX</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+<div class="dashboard-layout">
+  <main class="main-content" style="max-width: 800px;">
+    <h2>Identity Verification (KYC)</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem;">
+      <div class="card" style="border-top: 4px solid var(--accent);">
+        <span class="badge badge-success">Completed</span>
+        <h4 style="margin-top: 0.5rem;">Level 1: Basic</h4>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">Email & Phone Verified</p>
+      </div>
+
+      <div class="card" style="border-top: 4px solid var(--accent);">
+        <span class="badge badge-success">Completed</span>
+        <h4 style="margin-top: 0.5rem;">Level 2: National ID</h4>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">NIN / Ghana Card / Passport Verified</p>
+      </div>
+
+      <div class="card" style="border-top: 4px solid var(--warning);">
+        <span class="badge badge-warning">Locked</span>
+        <h4 style="margin-top: 0.5rem;">Level 3: Field Specialist</h4>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">Proof of Residence required for ground tasks.</p>
+        <button class="btn btn-outline" style="margin-top: 1rem; padding: 0.2rem 0.5rem; font-size: 0.75rem;" onclick="SINEX.showToast('KYC Level 3 document upload opened.')">Upgrade</button>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

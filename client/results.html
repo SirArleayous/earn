@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analytics & Task Results | SINEX</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+<div class="dashboard-layout">
+  <main class="main-content">
+    <h2>Campaign Intelligence & Verification Analytics</h2>
+    
+    <div class="stat-grid" style="margin-top: 1.5rem;">
+      <div class="stat-card">
+        <div class="label">Total Collected Responses</div>
+        <div class="value">1,420</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Verification Approval Rate</div>
+        <div class="value" style="color: var(--accent);">94.2%</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Rejected Submissions</div>
+        <div class="value" style="color: var(--danger);">5.8%</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <h3>Task Evidence Submissions Stream</h3>
+      <table class="data-table" style="margin-top: 1rem;">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Timestamp</th>
+            <th>Location GPS</th>
+            <th>Evidence Data</th>
+            <th>Verification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#SNX-1092</td>
+            <td>2026-09-23 11:20</td>
+            <td>6.5244° N, 3.3792° E (Lagos)</td>
+            <td><a href="#" style="color: var(--primary);">View Photo Receipt</a></td>
+            <td>
+              <button class="btn btn-primary" style="padding: 0.2rem 0.4rem; font-size: 0.7rem;" onclick="SINEXClient.verifySubmission(101, true)">Approve</button>
+              <button class="btn btn-secondary" style="padding: 0.2rem 0.4rem; font-size: 0.7rem;" onclick="SINEXClient.verifySubmission(101, false)">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/client.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | SINEX Platform</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+<body style="display:flex; align-items:center; justify-content:center; min-height:100vh; background:var(--bg-main); padding:2rem 0;">
+
+  <div class="card" style="width:100%; max-width:520px; padding:2.5rem;">
+    <div style="text-align:center; margin-bottom:2rem;">
+      <a href="../public/index.html" class="brand-logo">SINEX<span>.</span></a>
+      <h2 style="font-size:1.5rem; margin-top:0.5rem;">Create Your Account</h2>
+      <p style="font-size:0.875rem; color:var(--text-muted);">Join Africa's premier distributed task & verification network</p>
+    </div>
+
+    <!-- Account Type Selection -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; margin-bottom:1.5rem;">
+      <button class="btn btn-secondary active-role" type="button" id="roleUserBtn" onclick="selectType('USER')">User / Tasker</button>
+      <button class="btn btn-secondary" type="button" id="roleClientBtn" onclick="selectType('CLIENT')">Business</button>
+      <button class="btn btn-secondary" type="button" id="roleInvestorBtn" onclick="selectType('INVESTOR')">Investor</button>
+    </div>
+
+    <form id="registerForm" onsubmit="handleRegister(event)">
+      <div style="margin-bottom:1rem;">
+        <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;" id="nameLabel">Full Name</label>
+        <input type="text" required style="width:100%; padding:0.65rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
+      </div>
+
+      <div style="margin-bottom:1rem;">
+        <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">Email Address</label>
+        <input type="email" required style="width:100%; padding:0.65rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+        <div>
+          <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">Country</label>
+          <select style="width:100%; padding:0.65rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
+            <option value="NG">🇳🇬 Nigeria</option>
+            <option value="KE">🇰🇪 Kenya</option>
+            <option value="GH">🇬🇭 Ghana</option>
+            <option value="UG">🇺🇬 Uganda</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">Phone Number</label>
+          <input type="tel" placeholder="+234..." required style="width:100%; padding:0.65rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+        <div>
+          <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">Password</label>
+          <input type="password" required style="width:100%; padding:0.65rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
+        </div>
+        <div>
+          <label style="display:block; font-size:0.85rem; font-weight:600; margin-bottom:0.3rem;">Confirm Password</label>
+          <input type="password" required style="width:100%; padding:0.65rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
+        </div>
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.85rem; cursor:pointer;">
+          <input type="checkbox" required>
+          <span>I agree to the <a href="../public/terms.html" target="_blank">Terms of Service</a> & <a href="../public/privacy.html" target="_blank">Privacy Policy</a></span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%; padding:0.75rem;">Create Account</button>
+    </form>
+
+    <div style="margin-top:1.5rem; text-align:center; font-size:0.85rem;">
+      Already have an account? <a href="login.html">Sign In</a>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    let currentRole = 'USER';
+
+    function selectType(role) {
+      currentRole = role;
+      document.querySelectorAll('.active-role').forEach(b => b.classList.remove('active-role'));
+      if(role === 'USER') document.getElementById('roleUserBtn').classList.add('active-role');
+      if(role === 'CLIENT') document.getElementById('roleClientBtn').classList.add('active-role');
+      if(role === 'INVESTOR') document.getElementById('roleInvestorBtn').classList.add('active-role');
+      
+      document.getElementById('nameLabel').innerText = role === 'CLIENT' ? 'Business / Company Name' : 'Full Name';
+    }
+
+    function handleRegister(e) {
+      e.preventDefault();
+      SINEX.setRole(currentRole);
+      SINEX.showToast('Account created successfully! Redirecting...');
+      setTimeout(() => {
+        const routes = { USER: '../user/dashboard.html', CLIENT: '../client/dashboard.html', INVESTOR: '../investor/dashboard.html' };
+        window.location.href = routes[currentRole];
+      }, 1200);
+    }
+  </script>
+</body>
+</html>

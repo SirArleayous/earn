@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Withdraw Funds | SINEX</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+<div class="dashboard-layout">
+  <main class="main-content" style="max-width: 600px;">
+    <div class="card">
+      <h2>Withdraw Wallet Funds</h2>
+      <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.5rem;">Available Balance: <strong>₦24,500.00</strong></p>
+
+      <form onsubmit="event.preventDefault(); SINEX.showToast('Withdrawal request of ₦10,000 submitted!');">
+        <div style="margin-bottom: 1rem;">
+          <label style="font-size: 0.85rem; font-weight: 600;">Withdrawal Amount (₦)</label>
+          <input type="number" value="10000" min="1000" style="width: 100%; padding: 0.65rem; border: 1px solid var(--border); border-radius: 4px;">
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <label style="font-size: 0.85rem; font-weight: 600;">Payout Destination</label>
+          <select style="width: 100%; padding: 0.65rem; border: 1px solid var(--border); border-radius: 4px;">
+            <option>Access Bank — ****4920</option>
+            <option>Kuda Microfinance Bank — ****1102</option>
+            <option>M-PESA Kenya (+2547...)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Process Payout</button>
+      </form>
+    </div>
+  </main>
+</div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Marketplace | SINEX</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <div class="brand">SINEX<span>.</span></div>
+    <ul class="sidebar-menu">
+      <li><a href="dashboard.html">📊 Dashboard</a></li>
+      <li><a href="tasks.html" class="active">🎯 Marketplace Tasks</a></li>
+      <li><a href="my-tasks.html">📋 My Task History</a></li>
+      <li><a href="wallet.html">💳 Wallet</a></li>
+      <li><a href="verification.html">🛡️ Verification</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <strong>Task Marketplace</strong>
+      <input type="text" placeholder="Search tasks..." style="padding:0.4rem 0.8rem; border:1px solid var(--border); border-radius:4px; width:220px;">
+    </header>
+
+    <div class="main-content">
+      <!-- Filter Bar -->
+      <div class="card" style="margin-bottom:1.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+        <span style="font-weight:600; font-size:0.85rem;">Filter Category:</span>
+        <button class="btn btn-secondary active">All</button>
+        <button class="btn btn-secondary">Surveys</button>
+        <button class="btn btn-secondary">AI / Data</button>
+        <button class="btn btn-secondary">Testing</button>
+        <button class="btn btn-secondary">Field Verification</button>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.25rem;">
+        <div class="card">
+          <span class="badge badge-info" style="margin-bottom:0.5rem;">Surveys</span>
+          <h4>Banking App Usability Survey</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin:0.5rem 0 1rem;">Complete feedback questionnaire on mobile UI design.</p>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong>₦750.00</strong>
+            <a href="task-details.html?id=103" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.8rem;">View Details</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge badge-warning" style="margin-bottom:0.5rem;">Field Task</span>
+          <h4>Storefront Signage Verification</h4>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin:0.5rem 0 1rem;">Upload a photo verifying merchant status in Ikeja.</p>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong>₦2,500.00</strong>
+            <a href="task-details.html?id=104" class="btn btn-primary" style="padding:0.4rem 0.8rem; font-size:0.8rem;">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
